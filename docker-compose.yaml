@@ -13,7 +13,7 @@ services:
       - '40002:443'
       - '40000:22'
     volumes:
-      - './config:/etc/gitlab'
-      - './logs:/var/log/gitlab'
-      - './data:/var/opt/gitlab'
+      - './Gitlab/config:/etc/gitlab'
+      - './Gitlab/logs:/var/log/gitlab'
+      - './Gitlab/data:/var/opt/gitlab'
     shm_size: '256m'
