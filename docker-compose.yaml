@@ -6,6 +6,8 @@ services:
     hostname: 'gitlab.local'
     environment:
       - GITLAB_OMNIBUS_CONFIG="external_url 'http://192.168.2.93:40001'"
+      - GITLAB_ROOT_EMAIL="admin@local"
+      - GITLAB_ROOT_PASSWORD="admin123"
     ports:
       - '40001:80'
       - '40002:443'
