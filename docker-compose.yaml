@@ -3,11 +3,9 @@ services:
     image: 'gitlab/gitlab-ee:latest'
     container_name: gitlab
     restart: always
-    hostname: '192.168.2.93'
+    hostname: 'gitlab.local'
     environment:
-      GITLAB_OMNIBUS_CONFIG: |
-        external_url '192.168.2.93:40001'
-        gitlab_rails['gitlab_shell_ssh_port'] = 40000
+      - GITLAB_OMNIBUS_CONFIG="external_url 'http://192.168.2.93:40001'"
     ports:
       - '40001:80'
       - '40002:443'
@@ -16,4 +14,3 @@ services:
       - './Gitlab/config:/etc/gitlab'
       - './Gitlab/logs:/var/log/gitlab'
       - './Gitlab/data:/var/opt/gitlab'
-    shm_size: '256m'
